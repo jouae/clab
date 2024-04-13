@@ -69,7 +69,7 @@ static inline unsigned long __ffs(unsigned long word)
     int num = 0;
 
 #if BITS_PER_LONG == 64
-    if ((word & AAAA) == 0) {
+    if ((word & 0xffffffff) == 0) {
         num += 32;
         word >>= 32;
     }
